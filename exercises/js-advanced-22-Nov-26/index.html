@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cinema Seats | DOM задача</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="page">
+    <header class="page-header">
+      <span class="eyebrow">CINEMA / РЕЗЕРВАЦИИ</span>
+      <h1>Избери своето място</h1>
+      <p>Избери свободни места от схемата на киносалона и потвърди резервацията.</p>
+    </header>
+
+    <div class="layout">
+      <section class="card cinema" aria-labelledby="cinema-title">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ЗАЛА 01</span>
+            <h2 id="cinema-title">Места в залата</h2>
+          </div>
+          <span class="price-tag">6€ / място</span>
+        </div>
+
+        <div class="screen" aria-hidden="true">ЕКРАН</div>
+
+        <!-- Задача 1: Генерирайте всички редове и места тук чрез JavaScript. -->
+        <div id="seat-map" class="seat-map" aria-label="Схема на местата"></div>
+
+        <div class="legend" aria-label="Легенда">
+          <div class="legend-item"><span class="legend-swatch seat--available"></span>Свободно</div>
+          <div class="legend-item"><span class="legend-swatch seat--selected"></span>Избрано</div>
+          <div class="legend-item"><span class="legend-swatch seat--occupied"></span>Заето</div>
+        </div>
+      </section>
+
+      <aside class="card booking" aria-labelledby="booking-title">
+        <span class="eyebrow">ТВОЯТА РЕЗЕРВАЦИЯ</span>
+        <h2 id="booking-title">Обобщение</h2>
+
+        <div class="summary-line">
+          <span>Избрани места</span>
+          <strong id="selected-count">0</strong>
+        </div>
+
+        <div class="selection-section">
+          <h3>Номера на местата</h3>
+          <p id="empty-selection" class="empty-state">Няма избрани места</p>
+          <ul id="selected-seats" class="selected-seats" aria-live="polite"></ul>
+        </div>
+
+        <div class="total-line">
+          <span>Обща цена</span>
+          <strong id="total-price">0€</strong>
+        </div>
+
+        <div class="actions">
+          <button id="reserve-btn" class="btn btn--primary" type="button">Резервирай</button>
+          <button id="clear-btn" class="btn btn--secondary" type="button">Изчисти избора</button>
+        </div>
+
+        <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+      </aside>
+    </div>
+
+    <footer class="page-footer">DOM практика · HTML / CSS / JavaScript</footer>
+  </main>
+</body>
+
+</html>
